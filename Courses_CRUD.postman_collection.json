@@ -1,0 +1,117 @@
+{
+  "info": {
+    "_postman_id": "crud-express-courses-collection",
+    "name": "Courses CRUD API",
+    "description": "Colección para probar el CRUD de cursos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Course",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Introducción a JavaScript\",\n  \"duration\": \"40 horas\",\n  \"instructor\": \"María García\",\n  \"price\": 299.99,\n  \"level\": \"beginner\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/courses",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "courses"]
+        },
+        "description": "Crea un nuevo curso"
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Courses",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/courses",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "courses"]
+        },
+        "description": "Obtiene la lista de todos los cursos"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Course by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/courses/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "courses", "1"]
+        },
+        "description": "Obtiene un curso específico por su ID"
+      },
+      "response": []
+    },
+    {
+      "name": "Update Course",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"price\": 249.99,\n  \"level\": \"intermediate\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/courses/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "courses", "1"]
+        },
+        "description": "Actualiza un curso existente"
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Course",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/courses/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "courses", "1"]
+        },
+        "description": "Elimina un curso por su ID"
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ]
+}
